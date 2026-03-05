@@ -19,6 +19,17 @@ loom {
             sourceSet sourceSets.client
         }
     }
+
+    runs {
+        client {
+            vmArg "-Xms1G"
+            vmArg "-Xmx4G"
+        }
+        server {
+            vmArg "-Xms1G"
+            vmArg "-Xmx4G"
+        }
+    }
 }
 
 fabricApi {

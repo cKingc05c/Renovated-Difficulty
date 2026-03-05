@@ -6,9 +6,17 @@
   "refmap": "renovated_difficulty.refmap.json",
   "mixins": [
     "DifficultyInvoker",
-    "DifficultyMixin"
+    "DifficultyMixin",
+    "LivingEntityDamageMixin",
+    "HostileEntitySpeedMixin",
+    "HostileEntitySpawnMixin",
+    "SpawnHelperContextMixin",
+    "SpawnHelperInfoCapMixin",
+    "SpawnDensityCapperDensityCapMixin",
+    "HostileEntityNeutralStateMixin",
+    "MobEntityNeutralTargetMixin",
+    "LivingEntityNeutralAggroMixin"
   ],
-  "accessWidener": "renovated_difficulty.accesswidener",
   "injectors": {
     "defaultRequire": 1
   },

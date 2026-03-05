@@ -6,5 +6,5 @@ mutable	field	net/minecraft/world/Difficulty	field_5804	[Lnet/minecraft/world/Di
 accessible	field	net/minecraft/world/Difficulty	field_5800	Ljava/util/function/IntFunction;
 mutable	field	net/minecraft/world/Difficulty	field_5800	Ljava/util/function/IntFunction;
 
-accessible	field	net/minecraft/world/Difficulty	field_41668	Lcom/mojang/serialization/Codec;
-mutable	field	net/minecraft/world/Difficulty	field_41668	Lcom/mojang/serialization/Codec;
+accessible	field	net/minecraft/world/Difficulty	field_41668	Lnet/minecraft/util/StringIdentifiable$EnumCodec;
+mutable	field	net/minecraft/world/Difficulty	field_41668	Lnet/minecraft/util/StringIdentifiable$EnumCodec;

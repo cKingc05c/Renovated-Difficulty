@@ -8,6 +8,7 @@
   "contact": {},
   "license": "MIT",
   "icon": "assets/renovated_difficulty/icon.png",
+  "accessWidener": "renovated_difficulty.accesswidener",
   "environment": "*",
   "entrypoints": {
     "fabric-datagen": [
