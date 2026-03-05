@@ -1,6 +1,5 @@
 accessWidener	v1	named
 
-# Make Difficulty internal fields public and mutable
 accessible	field	net/minecraft/world/Difficulty	field_5804	[Lnet/minecraft/world/Difficulty;
 mutable	field	net/minecraft/world/Difficulty	field_5804	[Lnet/minecraft/world/Difficulty;
 

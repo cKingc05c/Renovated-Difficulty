@@ -17,19 +17,20 @@ import java.util.function.Supplier;
 @Mixin(Difficulty.class)
 public class DifficultyMixin {
 
-    // These shadows now point to the "Named" Yarn mappings
-    @Shadow @Final @Mutable
+    // We use the Intermediary names in the shadow string to ensure they are found
+    // even if the environment's remapper is struggling.
+    @Shadow(aliases = {"field_5804"}) @Final @Mutable
     private static Difficulty[] field_5804; // $VALUES
 
-    @Shadow @Final @Mutable
-    public static Codec<Difficulty> CODEC;
+    @Shadow(aliases = {"field_41668"}) @Final @Mutable
+    private static Codec<Difficulty> field_41668; // CODEC
 
-    @Shadow @Final @Mutable
-    private static IntFunction<Difficulty> BY_ID;
+    @Shadow(aliases = {"field_5800"}) @Final @Mutable
+    private static IntFunction<Difficulty> field_5800; // BY_ID
 
     @Inject(method = "<clinit>", at = @At("TAIL"))
     private static void addCustomDifficulties(CallbackInfo ci) {
-        System.out.println("[Renovatio] Injecting via Access Widener...");
+        System.out.println("[Renovatio] Executing Compatibility-First Injection...");
 
         try {
             Difficulty tranquil = DifficultyInvoker.create("TRANQUIL", -1, 4, "tranquil");
@@ -41,11 +42,11 @@ public class DifficultyMixin {
                     vanilla[0], tranquil, vanilla[1], vanilla[2], vanilla[3], brutal, nightmare
             };
 
-            // Directly overwrite the fields unlocked by the Access Widener
+            // Update the values array
             field_5804 = newValues;
 
-            // Use a classic Anonymous Class instead of a Lambda to prevent BootstrapMethodError
-            BY_ID = new IntFunction<Difficulty>() {
+            // Use Anonymous Inner Classes to avoid BootstrapMethodErrors (Lambdas)
+            field_5800 = new IntFunction<Difficulty>() {
                 @Override
                 public Difficulty apply(int id) {
                     for (Difficulty d : newValues) {
@@ -55,16 +56,17 @@ public class DifficultyMixin {
                 }
             };
 
-            // Refresh the Codec
-            CODEC = StringIdentifiable.createCodec(new Supplier<Difficulty[]>() {
+            // Rebuild the Codec
+            field_41668 = StringIdentifiable.createCodec(new Supplier<Difficulty[]>() {
                 @Override
                 public Difficulty[] get() {
                     return newValues;
                 }
             });
 
-            System.out.println("[Renovatio] Surgery Complete!");
+            System.out.println("[Renovatio] Difficulty Engine Surgery Successful.");
         } catch (Throwable t) {
+            System.err.println("[Renovatio] CRITICAL INJECTION FAILURE:");
             t.printStackTrace();
         }
     }

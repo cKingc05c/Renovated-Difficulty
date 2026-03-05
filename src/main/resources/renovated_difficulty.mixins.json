@@ -3,6 +3,7 @@
   "minVersion": "0.8",
   "package": "RenovatioMod.renovated_difficulty.mixin",
   "compatibilityLevel": "JAVA_21",
+  "refmap": "renovated_difficulty.refmap.json",
   "mixins": [
     "DifficultyInvoker",
     "DifficultyMixin"
