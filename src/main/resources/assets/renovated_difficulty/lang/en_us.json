@@ -1,0 +1,8 @@
+{
+  "options.difficulty.tranquil": "Tranquil",
+  "options.difficulty.tranquil.info": "A peaceful world with reduced hunger and slower mobs.",
+  "options.difficulty.brutal": "Brutal",
+  "options.difficulty.brutal.info": "Mobs deal massive damage and have increased tracking range.",
+  "options.difficulty.nightmare": "Nightmare",
+  "options.difficulty.nightmare.info": "Darkness is lethal. Mobs are faster and smarter."
+}

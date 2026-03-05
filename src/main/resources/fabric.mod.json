@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "id": "renovated_difficulty",
+  "version": "${version}",
+  "name": "Renovated Difficulty",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/renovated_difficulty/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-datagen": [
+      "RenovatioMod.renovated_difficulty.client.Renovated_difficultyDataGenerator"
+    ],
+    "client": [
+      "RenovatioMod.renovated_difficulty.client.Renovated_difficultyClient"
+    ],
+    "main": [
+      "RenovatioMod.renovated_difficulty.Renovated_difficulty"
+    ]
+  },
+  "mixins": [
+    "renovated_difficulty.mixins.json",
+    {
+      "config": "renovated_difficulty.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}

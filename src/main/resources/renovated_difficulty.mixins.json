@@ -1,0 +1,17 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "RenovatioMod.renovated_difficulty.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "DifficultyInvoker",
+    "DifficultyMixin"
+  ],
+  "accessWidener": "renovated_difficulty.accesswidener",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}
